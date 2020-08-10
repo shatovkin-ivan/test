@@ -50,7 +50,8 @@ nav {
 }
 
 .slider {
-	padding: 20px 0;
+	padding: 70px 0;
+	background: url(../img/bg1.jpg) no-repeat center top fixed;
 }
 .title {
 	font-size: 30px;
@@ -118,7 +119,9 @@ nav {
 
 
 .tabs {
-	padding: 20px 0;
+	padding: 70px 0;
+	position: relative;
+	background: url(../img/bg2.jpg) no-repeat center top fixed;
 }
 .tabs__subtitle {
 	font-weight: 500;
@@ -196,15 +199,197 @@ nav {
 	justify-content: flex-end;
 	position: relative;
 	padding: 0 30px;
-	margin: 5% 0 0 10%;
+	margin: 5% 0 2% 10%;
+	width: 85%;
+	object-fit: cover;
+}
+.tabs__slider_item {
 	width: 100%;
-	width: 550px;
+	max-width: 100%;
 }
 .tabs__slider img {
-	width: 40%;
-	max-width: 40%;
+	width: 100%;
 	height: 200px;
 	object-fit: cover;
+}
+
+.dropdown {
+	padding: 3% 0;
+	background: url(../img/bg3.jpg) no-repeat center top fixed;
+	min-height: 500px;
+}
+.dropdown__content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 auto;
+}
+.dropdown__btn {
+	max-width: 200px;
+	width: 100%;
+	height: 50px;
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 5px;
+	position: relative;
+}
+.dropdown__btn_active {
+	background-color: #333;
+}
+.dropdown__btn a {
+	position: absolute;
+	top: 15%;
+	right: 5px;
+	width: 20px;
+	height: 20px;
+	
+}
+.dropdown__btn svg path {
+	fill: #fff;
+}
+
+.dropdown__input {
+	position: relative;
+	margin-top: 10px;
+}
+.dropdown__input input {
+	max-width: 301px;
+	width: 100%;
+	height: 40px;
+	border: solid 1px #ccc;
+	padding-left: 5px;
+}
+.dropdown__input a {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.dropdown__input svg path {
+	fill: #333;
+}
+.dropdown__link {
+	min-width: 175px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #333;
+	text-decoration: none;
+	transition: .5s;
+}
+.dropdown__link:hover {
+	background-color: #ccc;
+	transition: .5s;
+}
+.dropdown__links {
+	max-width: 175px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+   top: 100%;
+
+}
+.dropdown__links li {
+	list-style-type: none;
+}
+.show {
+	display: flex!important;
+	transition: .5s;
+}
+.dropdown__wrap {
+	position: relative;
+	display: none;
+	transition: .5s;
+}.modal__btn {
+	max-width: 200px;
+	width: 100%;
+	height: 50px;
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.overlay {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba(0,0,0, .50);
+	top: 0;
+	z-index: 10;
+	display: none;
+}
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #fff;
+	max-width: 300px;
+	width: 100%;
+	min-height: 350px;
+	padding: 20px;
+}
+.modal__title {
+	margin-bottom: 20px;
+	text-align: center;
+}
+.modal__text {
+	margin-bottom: 20px;
+	text-align: center;
+}
+.modal__forms {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+.modal__forms input {
+	height: 40px;
+	margin-bottom: 15px;
+	padding-left: 15px;
+}
+.modal__button {
+	height: 30px;
+	width: 100px;
+	background-color: red;
+	border: none;
+	border-radius: 3px;
+	display: block;
+	margin: 0 auto;
+}
+.modal__close {
+	position: absolute;
+	top: 0;
+	right: -30px;
+	font-size: 40px;
+	line-height: 20px;
+	font-weight: bold;
+	color: red;
+	cursor: pointer;
+}
+
+#consulting {
+	display: none;
 }
 
 @media screen and (min-width: 1024px) {
@@ -221,11 +406,14 @@ nav {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		top: -1000%;
-		height: 100vh;
+		top: -100vh;
 		padding: 20px 15px;
 		background-color: rgba(0,0,0, .8);
-		transition: 0.6s;
+		transition: .5s;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		height: 100vh;
 	}
 	.menu a {
 		color: #fff;
@@ -235,11 +423,7 @@ nav {
 	}
 	.menu_active {
 		top: 0;
-		left: 0;
-		z-index: 100;
-		width: 100%;
-		height: 100vh;
-		transition: 0.6s;
+		transition: .5s;
 	}
 	.hamburger {
 		position: absolute;
@@ -256,7 +440,7 @@ nav {
 			width: 100%;
 			background-color: #000;
 			margin-bottom: 4px;
-			transition: 0.6s;
+			transition: .5s;
 	}
 	.hamburger__active {
 		z-index: 101;
@@ -274,6 +458,9 @@ nav {
 	}
 	.hamburger__active span:nth-child(3) {
 		transform: translateY(3px) rotate(45deg);
+	}
+	.tabs__slider {
+		width: 500px;
 	}
 	.tabs__item {
 		display: none;

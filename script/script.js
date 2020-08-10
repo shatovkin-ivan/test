@@ -1,4 +1,14 @@
 // Бургер
+
+// $(document).ready(function(){
+// 	$('.menu').on('click', function(e){
+// 		e.addClass('.menu__active');
+// 	})
+// })
+
+
+
+
 window.addEventListener('DOMContentLoaded', () => {
 	const menu = document.querySelector('.menu'),
 	menuItem = document.querySelectorAll('.menu__item'),
@@ -24,8 +34,8 @@ $(document).ready(function(){
 			infinite: true,
 			slidesToShow: 2,
 			slidesToScroll: 2,
-			prevArrow: '<button type="button" class="slick-prev"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-left" class="svg-inline--fa fa-arrow-alt-circle-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm116-292H256v-70.9c0-10.7-13-16.1-20.5-8.5L121.2 247.5c-4.7 4.7-4.7 12.2 0 16.9l114.3 114.9c7.6 7.6 20.5 2.2 20.5-8.5V300h116c6.6 0 12-5.4 12-12v-64c0-6.6-5.4-12-12-12z"></path></svg></button>',
-			nextArrow: '<button type="button" class="slick-next"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-right" class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zM140 300h116v70.9c0 10.7 13 16.1 20.5 8.5l114.3-114.9c4.7-4.7 4.7-12.2 0-16.9l-114.3-115c-7.6-7.6-20.5-2.2-20.5 8.5V212H140c-6.6 0-12 5.4-12 12v64c0 6.6 5.4 12 12 12z"></path></svg></button>',
+			prevArrow: '<button type="button" class="slick-prev"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-left" class="svg-inline--fa fa-arrow-alt-circle-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm116-292H256v-70.9c0-10.7-13-16.1-20.5-8.5L121.2 247.5c-4.7 4.7-4.7 12.2 0 16.9l114.3 114.9c7.6 7.6 20.5 2.2 20.5-8.5V300h116c6.6 0 12-5.4 12-12v-64c0-6.6-5.4-12-12-12z"></path></svg></button>',
+			nextArrow: '<button type="button" class="slick-next"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-right" class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zM140 300h116v70.9c0 10.7 13 16.1 20.5 8.5l114.3-114.9c4.7-4.7 4.7-12.2 0-16.9l-114.3-115c-7.6-7.6-20.5-2.2-20.5 8.5V212H140c-6.6 0-12 5.4-12 12v64c0 6.6 5.4 12 12 12z"></path></svg></button>',
 			responsive: [
 				{
 					breakpoint: 575,
@@ -41,7 +51,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('.tabs__slider').slick({
 			infinite: true,
-			slidesToShow: 3,
+			slidesToShow: 2,
 			slidesToScroll: 2,
 			prevArrow: '<button type="button" class="slick-prev"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-left" class="svg-inline--fa fa-arrow-alt-circle-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm116-292H256v-70.9c0-10.7-13-16.1-20.5-8.5L121.2 247.5c-4.7 4.7-4.7 12.2 0 16.9l114.3 114.9c7.6 7.6 20.5 2.2 20.5-8.5V300h116c6.6 0 12-5.4 12-12v-64c0-6.6-5.4-12-12-12z"></path></svg></button>',
 			nextArrow: '<button type="button" class="slick-next"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-right" class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zM140 300h116v70.9c0 10.7 13 16.1 20.5 8.5l114.3-114.9c4.7-4.7 4.7-12.2 0-16.9l-114.3-115c-7.6-7.6-20.5-2.2-20.5 8.5V212H140c-6.6 0-12 5.4-12 12v64c0 6.6 5.4 12 12 12z"></path></svg></button>',
@@ -49,14 +59,24 @@ $(document).ready(function(){
 				{
 					breakpoint: 575,
 					settings: {
-						slidesToShow: 2,
+						slidesToShow: 1,
 						slidesToScroll: 1,
 						infinite: true,
 					}
 				}
 			]
 		});
-		$('.tabs__slider').slick('reinit');
+
+
+		$('.tabs__wrap-title').on('click', function(e){
+			e.preventDefault();
+			
+			var findSlider = $(this).parents('.tabs__main-content').find('.tabs__slider');
+		
+			$(findSlider).slick('setPosition');
+		
+		});
+	
 });
 
 // Табы
@@ -107,7 +127,7 @@ let subtab = function () {
 			item.classList.contains(subTabName) ? item.classList.add('is-active') :
 			item.classList.remove('is-active');
 		})
-		$('.tabs__slider').slick('reinit');
+		// $('.tabs__slider').slick('reinit');
 	}
 }
 subtab();
@@ -139,3 +159,35 @@ let mobileTab = function () {
 }
 mobileTab();
 
+
+window.addEventListener('DOMContentLoaded', () => {
+	const menu = document.querySelector('.dropdown__wrap'),
+	hamburger = document.querySelector('.dropdown__btn');
+
+	hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('dropdown__btn_active');
+			menu.classList.toggle('show');
+	});
+})
+
+
+$(document).ready(function(){
+	$window = $(window);
+$('section[data-type="background"]').each(function(){
+	 var $bgobj = $(this);
+$(window).scroll(function() {
+		 var yPos = -($window.scrollTop() / $bgobj.data('speed')); 
+		 var coords = '50% '+ yPos + 'px';
+		 $bgobj.css({ backgroundPosition: coords });
+	}); 
+});    
+}); 
+
+$(document).ready(function(){
+	$('[data-modal=consulting]').on('click', function() {
+		$('.overlay, #consulting').fadeIn();
+	})
+	$('.modal__close').on('click', function() {
+		$('.overlay, #consulting').fadeOut()
+	})
+})
