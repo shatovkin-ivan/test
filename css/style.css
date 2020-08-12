@@ -79,7 +79,8 @@ nav {
 	max-width: 40%;
 	width: 100%;
 	height: 300px;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .slick-prev {
 	position: absolute;
@@ -138,6 +139,7 @@ nav {
 	width: 100%;
 	transition: .5s;
 	border-bottom: solid 4px #ccc;
+	list-style-type: none;
 }
 .tabs__item.is-active {
 	border-bottom: solid 4px violet;
@@ -202,7 +204,8 @@ nav {
 	padding: 0 30px;
 	margin: 5% 0 2% 10%;
 	width: 85%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .tabs__slider_item {
 	width: 100%;
@@ -211,7 +214,8 @@ nav {
 .tabs__slider img {
 	width: 100%;
 	height: 200px;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 
 .dropdown {
@@ -226,32 +230,6 @@ nav {
 	flex-direction: column;
 	margin: 0 auto;
 }
-.dropdown__btn {
-	max-width: 200px;
-	width: 100%;
-	height: 50px;
-	background-color: red;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-	text-transform: uppercase;
-	text-decoration: none;
-	border-radius: 5px;
-	position: relative;
-}
-.dropdown__btn a {
-	position: absolute;
-	top: 15%;
-	right: 5px;
-	width: 20px;
-	height: 20px;
-	
-}
-.dropdown__btn svg path {
-	fill: #fff;
-}
-
 .dropdown__input {
 	position: relative;
 	margin-top: 10px;
@@ -274,7 +252,6 @@ nav {
 	fill: #333;
 }
 .dropdown__link {
-	min-width: 178px;
 	height: 40px;
 	display: flex;
 	justify-content: center;
@@ -282,18 +259,18 @@ nav {
 	color: #333;
 	text-decoration: none;
 	transition: .5s;
+	background-color: #fff;
 }
 .dropdown__link:hover {
 	background-color: #ccc;
 	transition: .5s;
 }
 .dropdown__links {
-	max-width: 175px;
 	width: 100%;
 	position: absolute;
 	display: none;
 	left: 0;
-   top: 100%;
+	top: 100%;
 
 }
 .dropdown__links li {
@@ -301,11 +278,9 @@ nav {
 }
 .show {
 	display: flex!important;
-	transition: .5s;
 }
 .dropdown__wrap {
 	position: relative;
-	transition: .5s;
 }.modal__btn {
 	max-width: 200px;
 	width: 100%;
@@ -391,11 +366,91 @@ nav {
 #consulting {
 	display: none;
 }
-
-@media screen and (min-width: 1024px) {
-	
-
+.clients {
+	position: relative;
+	padding: 7% 0;
+	max-height: 600px;
+	height: 100%;
+	overflow: hidden;
 }
+.clients-slider__main {
+	width: 100%;
+	height: 100%;
+}
+.clients-slider__main.slick-slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.clients-slider_item img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.clients__slider {
+	padding: 0px 30px;
+	margin-top: 50px;
+}
+.clients__slider_item img{
+	object-fit: cover;
+	width: 100%;
+	height: 300px;
+	height: 100%;
+}
+.img__test {
+	object-fit: cover;
+	max-width: 500px;
+	width: 100%;
+	margin-top: 50px;
+}
+
+.portfolio {
+	padding: 7% 0;
+	min-height: 650px;
+}
+.portfolio__content .title {
+	margin-bottom: 50px;
+}
+.portfolio__links {
+	width: 100%;
+}
+.portfolio__tabs {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0px 20px 0px;
+	width: 100%;
+}
+.portfolio__tabs-item {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+	transition: background-color .5s linear 100ms;
+}
+.portfolio__tabs-item:hover {
+	background-color:#ccc;
+}
+.portfolio__tabs-item.is-active {
+	background-color:#ccc;
+	transition: .5s;
+}
+.portfolio__tabs-content {
+	display: none;
+}
+.portfolio__tabs-content.is-active {
+	display: block;
+}
+.portfolio__tabs-title {
+	margin-bottom: 20px;
+}
+.portfolio__wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 @media screen and (max-width: 768px) {
 	.header {
 		padding: 5px 0;
@@ -475,9 +530,57 @@ nav {
 	.tabs__title_mobile.is-active {
 		background-color: red;
 	}
+	.portfolio__links {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		background-color: #333;
+		display: none;
+	} 
+	.portfolio__menu-mobile {
+		width: 100%;
+		position: relative;
+	}
+	.portfolio__wrap {
+		position: relative;
+	}
+	.portfolio__tabs {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+	}
+	.portfolio__menu-mobile input {
+		width: 100%;
+		height: 40px;
+	}
+	.portfolio__btn {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.portfolio__btn svg{
+		width: 20px;
+		height: 20px;
+	}
+	.portfolio__tabs-title {
+		margin-top: 20px;
+	}
+	.portfolio__subtitle {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 @media screen and (min-width: 768px) {
 	.tabs__title_mobile {
+		display: none;
+	}
+	.portfolio__menu-mobile {
 		display: none;
 	}
 }

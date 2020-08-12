@@ -25,27 +25,27 @@
 				<nav>
 					<ul class="menu">
 						<li>
-							<a class="scroll-to" href="#header">
+							<a class="anchor" href="#header">
 								Home
 							</a>
 						</li>
 						<li>
-							<a class="scroll-to" href="#about">
+							<a class="anchor"  href="#about">
 								About Us
 							</a>
 						</li>
 						<li>
-							<a class="scroll-to" href="#services">
+							<a class="anchor"  href="#services">
 								Services
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a class="anchor"  href="#">
 								Clients
 							</a>
 						</li>
 						<li>
-							<a class="scroll-to" href="#contacts">
+							<a class="anchor"  href="#contacts">
 								Contacts
 							</a>
 						</li>
@@ -84,48 +84,48 @@
 				<h2 class="title title_white">
 					Our Services
 				</h2>
-				<div class="tabs__items">
-					<div class="tabs__item is-active" data-tab-name="tab-1">
-						<h3 class="tabs__subtitle">
+				<ul class="tabs__items">
+					<li class="tabs__item is-active" data-tab-name="tab-1">
+						<a class="tabs__subtitle">
 							Description
-						</h3>
-					</div>
+						</a>
+					</li>
 
-					<div class="tabs__item" data-tab-name="tab-2">
-						<h3 class="tabs__subtitle">
+					<li class="tabs__item" data-tab-name="tab-2">
+						<a class="tabs__subtitle">
 							Features
-						</h3>
-					</div>
-					<div class="tabs__item" data-tab-name="tab-3">
-						<h3 class="tabs__subtitle">
+						</a>
+					</li>
+					<li class="tabs__item" data-tab-name="tab-3">
+						<a class="tabs__subtitle">
 							Certificates
-						</h3>
-					</div>
-					<div class="tabs__item" data-tab-name="tab-4">
-						<h3 class="tabs__subtitle">
+						</a>
+					</li>
+					<li class="tabs__item" data-tab-name="tab-4">
+						<a class="tabs__subtitle">
 							Reviews
-						</h3 class="tabs__subtitle">
-					</div>
-					<div class="tabs__item" data-tab-name="tab-5">
-						<h3 class="tabs__subtitle">
+						</a>
+					</li>
+					<li class="tabs__item" data-tab-name="tab-5">
+						<a class="tabs__subtitle">
 							Delivery
-						</h3>
-					</div>
-					<div class="tabs__item" data-tab-name="tab-6">
-						<h3 class="tabs__subtitle">
+						</a>
+					</li>
+					<li class="tabs__item" data-tab-name="tab-6">
+						<a class="tabs__subtitle">
 							Buy
-						</h3>
-					</div>
-					<div class="tabs__item" data-tab-name="tab-7">
-						<h3 class="tabs__subtitle">
+						</a>
+					</li>
+					<li class="tabs__item" data-tab-name="tab-7">
+						<a class="tabs__subtitle">
 							Marketplace
-						</h3>
-					</div>
-				</div>
+						</a>
+					</li>
+				</ul>
 				<div class="tabs__title_mobile is-active" data-tab-name="tab-1">
 					<h3>Description</h3>
 				</div>
-				<div class="tabs__description is-active tab-1" id="description">
+				<div class="tabs__description is-active tab-1">
 					<div class="tabs__main-content">
 						<div class="tabs__blocks">
 							<div class="tabs__wrap-title is-active" data-subtab-name="subtab-1">
@@ -313,7 +313,7 @@
 				<div class="dropdown__wrap">
 					<div class="dropdown__input">
 						<a href="#" class="arrow__btn">
-							<svg class="arrow-btn" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down"
+							<svg class="arrow-btn arrow-close" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down"
 							class="svg-inline--fa fa-angle-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 320 512">
 							<path fill="currentColor"
@@ -325,7 +325,7 @@
 					</div>
 					<div class="dropdown__links">
 						<ul>
-							<li><a href="#Home" class="dropdown__link">Home</a></li>
+							<li class="dropdown__item"><a href="#Home" class="dropdown__link">Home</a></li>
 							<li><a href="#About" class="dropdown__link">About Us</a></li>
 							<li><a href="#Services" class="dropdown__link">Services</a></li>
 							<li><a href="#Clients" class="dropdown__link">Clients</a></li>
@@ -351,11 +351,141 @@
 		</div>
 	</div>
 
+	<section class="clients">
+		<div class="clients-slider__main">
+			<div class="clients-slider_item">
+				<img src="img/slide6.jpg" alt="slide">
+			</div>
+			<div class="clients-slider_item">
+				<img src="img/slide7.jpg" alt="slide">
+			</div>
+			<div class="clients-slider_item">
+				<img src="img/slide8.jpg" alt="slide">
+			</div>
+			<div class="clients-slider_item">
+				<img src="img/slide9.jpg" alt="slide">
+			</div>
+		</div>
+		<div class="container">
+			<div class="clients__content">
+				<h2 class="title">Clients</h2>
+				<div class="clients__slider">
+					<div class="clients__slider_item">
+						<img src="img/slide6.jpg" alt="slide">
+					</div>
+					<div class="clients__slider_item">
+						<img src="img/slide7.jpg" alt="slide">
+					</div>
+					<div class="clients__slider_item">
+						<img src="img/slide8.jpg" alt="slide">
+					</div>
+					<div class="clients__slider_item">
+						<img src="img/slide9.jpg" alt="slide">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
+	<section class="portfolio">
+		<div class="container">
+			<div class="portfolio__content">
+				<h2 class="title">
+					Portfolio
+				</h2>
+				<div class="portfolio__wrap">
+					<div class="portfolio__menu-mobile">
+						<a href="#" class="portfolio__btn">
+							<svg class="arrow-btn arrow-close" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-down"
+							class="svg-inline--fa fa-angle-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 320 512">
+							<path fill="currentColor"
+								d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z">
+							</path>
+							</svg>
+						</a>
+						<input type="text" placeholder="Results">
+					</div>
+					<div class="portfolio__links">
+						<ul class="portfolio__tabs">
+							<li class="portfolio__tabs-item is-active" data-portfolio-tabs="ptabs-1">
+								<a class="portfolio__subtitle">Results</a>
+							</li>
+							<li class="portfolio__tabs-item" data-portfolio-tabs="ptabs-2">
+								<a class="portfolio__subtitle">Reviews</a>
+							</li>
+							<li class="portfolio__tabs-item" data-portfolio-tabs="ptabs-3">
+								<a class="portfolio__subtitle">JustTitle1</a>
+							</li>
+							<li class="portfolio__tabs-item" data-portfolio-tabs="ptabs-4">
+								<a class="portfolio__subtitle">JustTitle2</a>
+							</li>
+							<li class="portfolio__tabs-item" data-portfolio-tabs="ptabs-5">
+								<a class="portfolio__subtitle">JustTitle3</a>
+							</li>
+							<li class="portfolio__tabs-item" data-portfolio-tabs="ptabs-6">
+								<a class="portfolio__subtitle">JustTitle4</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="portfolio__tabs-content ptabs-1 is-active">
+					<h3 class="portfolio__tabs-title">
+						Results
+					</h3>
+					<p class="portfolio__tabs-text">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea temporibus aspernatur tempora qui distinctio tenetur dolor, harum sint excepturi magni ipsum eum perspiciatis esse veritatis nesciunt labore dolores omnis fugit!
+					</p>
+				</div>
+				<div class="portfolio__tabs-content ptabs-2">
+					<h3 class="portfolio__tabs-title">
+						Reviews
+					</h3>
+					<p class="portfolio__tabs-text">
+						Ea temporibus aspernatur tempora qui distinctio tenetur dolor, Ea temporibus aspernatur tempora qui distinctio tenetur dolor, harum sint excepturi magni ipsum eum perspiciatis esse veritatis nesciunt labore dolores omnis fugit!
+					</p>
+				</div>
+				<div class="portfolio__tabs-content ptabs-3">
+					<h3 class="portfolio__tabs-title">
+						JustTitle1
+					</h3>
+					<p class="portfolio__tabs-text">
+						Harum sint excepturi magni ipsum eum perspiciatis esse veritatis nesciunt labore dolores omnis fugit! Ea temporibus aspernatur tempora qui distinctio tenetur dolor, harum sint excepturi magni ipsum eum perspiciatis esse veritatis nesciunt labore dolores omnis fugit!
+					</p>
+				</div>
+				<div class="portfolio__tabs-content ptabs-4">
+					<h3 class="portfolio__tabs-title">
+						JustTitle2
+					</h3>
+					<p class="portfolio__tabs-text">
+						Dolor sit amet consectetur, adipisicing elit. Ea temporibus aspernatur tempora qui distinctio tenetur dolor, harum sint excepturi magni ipsum eum perspiciatis esse veritatis nesciunt labore dolores omnis fugit!
+					</p>
+				</div>
+				<div class="portfolio__tabs-content ptabs-5">
+					<h3 class="portfolio__tabs-title">
+						JustTitle3
+					</h3>
+					<p class="portfolio__tabs-text">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea temporibus aspernatur tempora qui distinctio tenetur dolor, harum sint excepturi magni
+					</p>
+				</div>
+				<div class="portfolio__tabs-content ptabs-6">
+					<h3 class="portfolio__tabs-title">
+						JustTitle4
+					</h3>
+					<p class="portfolio__tabs-text">
+						 Ea temporibus aspernatur tempora qui distinctio tenetur dolor, harum sint excepturi magni ipsum eum perspiciatis esse veritatis nesciunt labore dolores omnis fugit
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="script/jquery-3.5.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.0.2/dist/simpleParallax.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="script/jquery-3.5.1.min.js"></script>
+	
 	<script src="script/slick.min.js"></script>
 	<script src="script/script.js"></script>
 </body>
