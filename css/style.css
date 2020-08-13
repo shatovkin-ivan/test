@@ -92,6 +92,7 @@ nav {
 	border: none;
 	min-width: 25px;
 	height: 100%;
+	cursor: pointer;
 }
 .slick-prev svg{
 	min-width: 25px;
@@ -108,6 +109,7 @@ nav {
 	border: none;
 	width: 25px;
 	height: 100%;
+	cursor: pointer;
 }
 .slick-next svg{
 	min-width: 25px;
@@ -310,10 +312,6 @@ nav {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 	background-color: #fff;
 	max-width: 300px;
 	width: 100%;
@@ -383,7 +381,8 @@ nav {
 	left: 0;
 }
 .clients-slider_item img{
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	width: 100%;
 	height: 100%;
 }
@@ -393,21 +392,15 @@ nav {
 	margin-top: 50px;
 }
 .clients__slider_item img{
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	width: 100%;
 	height: 300px;
 	height: 100%;
 }
-.img__test {
-	object-fit: cover;
-	max-width: 500px;
-	width: 100%;
-	margin-top: 50px;
-}
-
 .portfolio {
 	padding: 7% 0;
-	min-height: 650px;
+	min-height: 400px;
 }
 .portfolio__content .title {
 	margin-bottom: 50px;
@@ -434,7 +427,6 @@ nav {
 }
 .portfolio__tabs-item.is-active {
 	background-color:#ccc;
-	transition: .5s;
 }
 .portfolio__tabs-content {
 	display: none;
@@ -445,15 +437,58 @@ nav {
 .portfolio__tabs-title {
 	margin-bottom: 20px;
 }
-.portfolio__wrap {
+.gallery {
+	padding: 5% 0;
+}
+.gallery__slider {
+	margin-top: 50px;
+	width: 100%;
+}
+.gallery__slider-item {
+	transition: .5s linear;
+	margin: 0 10px;
+	width: 100%;
+}
+.gallery__slider-item img{
+	width: 100%;
+	height: 400px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+.gallery__wrap {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+}
+.cards {
+	padding: 7% 0;
+}
+.cards__gallery {
+	margin-top: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.cards__item {
+	width: 33.333%;
+	/* width: calc(33% - 20px); */
+	margin-bottom: 30px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.cards__item img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
 }
 
 @media screen and (max-width: 768px) {
 	.header {
 		padding: 5px 0;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		z-index: 100;
 	}
 	.menu {
 		position: fixed;
@@ -574,6 +609,19 @@ nav {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+}
+@media screen and (max-width: 575px) {
+	.container {
+		padding: 0px 15px;
+	}
+	.gallery__content {
+		margin-left: -15px;
+    	margin-right: -15px;
+    	width: calc(100% + 30px);
+		}
+	.gallery__slider-item {
+		margin: 0;
 	}
 }
 @media screen and (min-width: 768px) {
