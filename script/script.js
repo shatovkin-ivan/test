@@ -34,7 +34,7 @@ $(document).ready(function () {
 					slidesToScroll: 1,
 					infinite: true,
 				}
-			}
+			},
 		]
 	});
 	$('.tabs__slider').slick({
@@ -98,6 +98,31 @@ $(document).ready(function () {
 			}
 		]
 	});
+	$('.cards__gallery').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		asNavFor: '.clients-slider__main',
+		prevArrow: '<button type="button" class="slick-prev"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-left" class="svg-inline--fa fa-arrow-alt-circle-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#000000" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm116-292H256v-70.9c0-10.7-13-16.1-20.5-8.5L121.2 247.5c-4.7 4.7-4.7 12.2 0 16.9l114.3 114.9c7.6 7.6 20.5 2.2 20.5-8.5V300h116c6.6 0 12-5.4 12-12v-64c0-6.6-5.4-12-12-12z"></path></svg></button>',
+		nextArrow: '<button type="button" class="slick-next"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-right" class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#000000" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zM140 300h116v70.9c0 10.7 13 16.1 20.5 8.5l114.3-114.9c4.7-4.7 4.7-12.2 0-16.9l-114.3-115c-7.6-7.6-20.5-2.2-20.5 8.5V212H140c-6.6 0-12 5.4-12 12v64c0 6.6 5.4 12 12 12z"></path></svg></button>',
+		responsive: [
+			{
+				breakpoint: 2048,
+            settings: "unslick"
+			},
+			{
+				breakpoint: 575,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: true,
+					variableWidth: true
+				}
+			}
+		]
+	});
+
+	
 
 	$('.tabs__wrap-title').on('click', function (e) {
 		e.preventDefault();
@@ -131,6 +156,7 @@ $(document).ready(function () {
 	$('.hamburger').on('click', function(){
 		$('.menu').toggleClass('menu_active'),
 		$('.hamburger').toggleClass('hamburger_active');
+		$('body').toggleClass('overflow');
 	})
 
 	$('a.anchor').click(function(e){
@@ -280,8 +306,11 @@ let ptab = function () {
 }
 ptab();
 
+
+// Квадратные картинки
+
 window.onload = function() {
-	var images = document.querySelectorAll('.cards__item');
+	const images = document.querySelectorAll('.cards__item');
 
 	autoResize(images);
 
@@ -291,8 +320,27 @@ window.onload = function() {
 
 }
 function autoResize(imagesElements) {
-	for(var i = 0; i < imagesElements.length; i++) {
-		var elementWidth = imagesElements[i].offsetWidth;
+	for(let i = 0; i < imagesElements.length; i++) {
+		const elementWidth = imagesElements[i].offsetWidth;
 		imagesElements[i].style.height = elementWidth + "px";
 	}
 }
+
+// фиксированное меню
+
+
+window.addEventListener('scroll', function() {
+	const header = document.querySelector('.header'),
+		slider = document.querySelector('.slider'),
+		height = slider.offsetHeight;
+
+		function scroll() {
+			if (window.pageYOffset > height) {
+				header.classList.add('header_fixed');
+			}
+			else {
+				header.classList.remove('header_fixed');
+			}
+		}
+	scroll();
+})
