@@ -1,25 +1,9 @@
-
-// window.addEventListener('DOMContentLoaded', () => {
-// 	const menu = document.querySelector('.menu'),
-// 		menuItem = document.querySelectorAll('.menu__item'),
-// 		hamburger = document.querySelector('.hamburger');
-
-// 	hamburger.addEventListener('click', () => {
-// 		hamburger.classList.toggle('hamburger__active');
-// 		menu.classList.toggle('menu_active');
-// 	});
-
-// 	menuItem.forEach(item => {
-// 		item.addEventListener('click', () => {
-// 			hamburger.classList.toggle('hamburger__active');
-// 			menu.classList.toggle('menu__active');
-// 		})
-// 	})
-// })
-
 // Слайдер
 
 $(document).ready(function () {
+	$(document).on('click', '.fancy__overlay_close', function(){
+		$.fancybox.close();
+	});
 	$('.slider__items').slick({
 		infinite: true,
 		slidesToShow: 2,
@@ -85,8 +69,6 @@ $(document).ready(function () {
 		arrows: false,
 		slidesToShow: 2,
 		slidesToScroll: 2,
-		prevArrow: '<button type="button" class="slick-prev"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-left" class="svg-inline--fa fa-arrow-alt-circle-left fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#000000" d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm116-292H256v-70.9c0-10.7-13-16.1-20.5-8.5L121.2 247.5c-4.7 4.7-4.7 12.2 0 16.9l114.3 114.9c7.6 7.6 20.5 2.2 20.5-8.5V300h116c6.6 0 12-5.4 12-12v-64c0-6.6-5.4-12-12-12z"></path></svg></button>',
-		nextArrow: '<button type="button" class="slick-next"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-alt-circle-right" class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#000000" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zM140 300h116v70.9c0 10.7 13 16.1 20.5 8.5l114.3-114.9c4.7-4.7 4.7-12.2 0-16.9l-114.3-115c-7.6-7.6-20.5-2.2-20.5 8.5V212H140c-6.6 0-12 5.4-12 12v64c0 6.6 5.4 12 12 12z"></path></svg></button>',
 		responsive: [
 			{
 				breakpoint: 575,
@@ -122,6 +104,13 @@ $(document).ready(function () {
 		]
 	});
 
+	$('.description__slider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+	});
+
 	
 
 	$('.tabs__wrap-title').on('click', function (e) {
@@ -151,19 +140,15 @@ $(document).ready(function () {
 		$('.overlay, #consulting').fadeOut()
 	})
 
-	// Бургер
-
-	$('.hamburger').on('click', function(){
-		$('.menu').toggleClass('menu_active'),
-		$('.hamburger').toggleClass('hamburger_active');
-		$('body').toggleClass('overflow');
-	})
-
+	// Скролл
+	
 	$('a.anchor').click(function(e){
+		if ( $(window).width() > 768) {
 		e.preventDefault();
 		var elClick = $(this).attr('href');
 		var dest = $(elClick).offset().top;
-		$('html:not(:animated),body:not(:animated)').animate({scrollTop : dest}, 1000);
+			$('html:not(:animated),body:not(:animated)').animate({scrollTop : dest}, 1000);
+		}
   });
 
   $('.arrow-btn').on('click', function(event) {
@@ -171,9 +156,7 @@ $(document).ready(function () {
 		$('.dropdown__links').slideToggle();
   })
 
-
-
-  // выпадающее меню
+  // выпадающее меню //переписать
 
 	const listItem = $('.dropdown__link');
 	const dropdownInput = $('.dropdown__input input');
@@ -183,6 +166,7 @@ $(document).ready(function () {
 		$('.dropdown__links').slideUp(300);
 	});
 
+
 	if ( $(window).width() < 768 ) {
 		const listItem = $('.portfolio__subtitle');
 		const portfolioInput = $('.portfolio__menu-mobile input');
@@ -190,7 +174,7 @@ $(document).ready(function () {
 	$('.portfolio__btn').on('click', function(event) {
 		event.preventDefault();
 			$('.portfolio__links').slideToggle();
-		})
+		});
 
 	$(listItem).on('click', function(event){
 		event.preventDefault();
@@ -198,6 +182,12 @@ $(document).ready(function () {
 		$('.portfolio__links').slideUp(300);
 		});
 	}
+
+	$('.menu__wrap a').on('click', function(e) {
+		e.preventDefault();
+		 $(this).parent('.menu__wrap').find('.menu__dropdown').slideToggle();
+		 $(this).parent('.menu__wrap').find('.menu__arrow').toggleClass('menu__arrow_active');
+	})
 });
 
 
@@ -307,6 +297,21 @@ let ptab = function () {
 ptab();
 
 
+// Бургер
+
+window.addEventListener('DOMContentLoaded', () => {
+	const menu = document.querySelector('.menu'),
+		hamburger = document.querySelector('.hamburger'),
+		body = document.querySelector('body');
+
+	hamburger.addEventListener('click', () => {
+		hamburger.classList.toggle('hamburger_active');
+		menu.classList.toggle('menu_active');
+		body.classList.toggle('overflow');
+	});
+});
+
+
 // Квадратные картинки
 
 window.onload = function() {
@@ -314,9 +319,9 @@ window.onload = function() {
 
 	autoResize(images);
 
-	$(window).resize(function(){
+	window.addEventListener('resize', () => {
 		autoResize(images);
-	});
+	})
 
 }
 function autoResize(imagesElements) {
@@ -327,7 +332,6 @@ function autoResize(imagesElements) {
 }
 
 // фиксированное меню
-
 
 window.addEventListener('scroll', function() {
 	const header = document.querySelector('.header'),
@@ -344,3 +348,30 @@ window.addEventListener('scroll', function() {
 		}
 	scroll();
 })
+
+// Валидация
+
+document.addEventListener('submit', function(e) {
+	e.preventDefault();
+
+	const from = document.querySelectorAll('.fancy__modal_input'),
+	submit = document.querySelector('.submit');
+
+	for(let i = 0; i < from.length; i++) {
+		const input = from[i],
+			inputValue = from[i].value;
+		if(inputValue == '') {
+		
+			input.nextElementSibling.style.opacity = '1';
+			input.nextElementSibling.style.zIndex = '999';
+		}
+	}
+});
+
+// Бургер jQuery
+
+// $('.hamburger').on('click', function(){
+// 		$('.menu').toggleClass('menu_active'),
+// 		$('.hamburger').toggleClass('hamburger_active');
+// 		$('body').toggleClass('overflow');
+// 	})
